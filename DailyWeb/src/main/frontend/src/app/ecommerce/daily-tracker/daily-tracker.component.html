@@ -1,0 +1,18 @@
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+    <div class="card-header text-center">TimeSheet</div>
+    <div class="card-body">
+        <h5 class="card-title">Total hours: {{total}}</h5>
+        <hr>
+        <h6 class="card-title">Activities Logged:</h6>
+
+        <ul>
+            <li *ngFor="let task of tasks.employeeTasks">
+                {{ task.employee.name }} - {{ task.employee.activity }} - {{ task.quantity}} hrs.
+            </li>
+        </ul>
+
+        <button class="btn btn-light btn-block" (click)="finishOrder()"
+                [disabled]="tasks.employeeTasks.length == 0">Submit
+        </button>
+    </div>
+</div>
